@@ -22,7 +22,7 @@ allow if {
     insurance_allowed_fields := {
         "patients": {"subject_id", "gender", "anchor_age"},
         "admissions": {"subject_id", "admission_type", "insurance", "marital_status"},
-        "labevents": {"subject_id", "itemid", "hadm_id", "value"},
+        "labevents": {"subject_id", "labevent_id", "itemid", "hadm_id", "value"},
     }
     allowed := insurance_allowed_fields[input.resource.table]
     every field in input.resource.fields {
@@ -37,7 +37,7 @@ allow if {
     case_manager_allowed_fields := {
         "patients": {"subject_id", "gender", "anchor_age", "anchor_year"},
         "admissions": {"subject_id", "hadm_id", "admittime", "dischtime", "admission_type", "admit_provider_id", "admission_location", "discharge_location"},
-        "labevents": {"subject_id", "itemid", "hadm_id", "order_provider_id", "value"}
+        "labevents": {"subject_id", "labevent_id", "itemid", "hadm_id", "order_provider_id", "value"}
     }
     allowed := case_manager_allowed_fields[input.resource.table]
     every field in input.resource.fields {
