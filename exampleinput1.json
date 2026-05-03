@@ -1,9 +1,17 @@
 {
     "subject": {
-    "role": "billing"},
+        "role": "case_manager",
+        "patients": ["10014729"]
+    },
     "context": {
-    "subject_id": 10014729,
-    "action": "read",
-    "accessing": ["admissions"]
+        "action": "read"
+    },
+    "resource": {
+        "subject_id": "0",
+        "table": "admissions",
+        "fields": [
+            "admittime",
+            "dischtime"
+        ]
     }
 }
